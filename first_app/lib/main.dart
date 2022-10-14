@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +22,7 @@ class MyAppState extends State<MyApp>{
     setState(() {
           _qIndex = _qIndex+1;
     });
-      print(_qIndex);
+      // print(_qIndex);
 
   }
 
@@ -37,29 +39,13 @@ class MyAppState extends State<MyApp>{
     body: Column(
       children: [
         // Text(questions.elementAt(1)),
-        Text(questions[_qIndex]),
-        ElevatedButton(
-          child: Text("Answer 1"),
-          onPressed: _answerQuestion,
-        ),
-         ElevatedButton(
-          child: Text("Answer 2"),
-          onPressed: _answerQuestion,
-        ),
-         ElevatedButton(
-          child: Text("Answer 3"),
-          onPressed: null,
-        ),
-         ElevatedButton(
-          child: Text("Answer 4"),
-          onPressed: ()=>print("Anon Function"),
-        ),
-         ElevatedButton(
-          child: Text("Answer 5"),
-          onPressed: (){
-            print("Anonn Function");
-            },
-        ),
+        // Text(questions[_qIndex]),
+        Question(questions[_qIndex]),
+        Answer(_answerQuestion),
+        Answer(_answerQuestion),
+        Answer(_answerQuestion),
+        Answer(_answerQuestion),
+        Answer(_answerQuestion),
       ],
     )
     ));
